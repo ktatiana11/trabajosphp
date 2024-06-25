@@ -1,6 +1,6 @@
 <?php
 // Función para consignar dinero
-function consignar ($cantidad){
+function consignar($cantidad){
     if($cantidad>0){
         $array ['saldo'] += $cantidad;
         return "Se ha consignado $cantidad";
@@ -15,7 +15,7 @@ function consultar(){
 }
 
 // Función para retirar dinero
-function retirar ($cantidad){
+function retirar($cantidad){
     if ($cantidad>0){
         if ($cantidad <=$array ['saldo'] ){
             $array ['saldo'] -= $cantidad;
@@ -27,5 +27,19 @@ function retirar ($cantidad){
     } else {
         return "La cantidad a retirar debe ser mayor a cero";
     }
+}
+
+//menu del cajero.
+
+switch ($accion){
+    case "consignar":
+        $mensaje= consignar($cantidad);
+        break;
+    case "consulta": 
+        $mensaje = consulta();
+        break;
+    case "retirar":
+        $mensaje= retirar($cantidad);
+        break;
 }
 ?>
