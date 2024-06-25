@@ -30,16 +30,21 @@ function retirar($cantidad){
 }
 
 //menu del cajero.
+echo "1: consignar". "\n",
+ "2: colsultar". "\n",
+ "3: retirar". "\n";
 
-switch ($accion){
-    case "consignar":
-        $mensaje= consignar($cantidad);
-        break;
-    case "consulta": 
-        $mensaje = consulta();
-        break;
-    case "retirar":
-        $mensaje= retirar($cantidad);
-        break;
+$accion= readline ("Ingrese la opion que quiere hacer: ");
+if ($accion == 1){
+    $cantidad =readline ("Ingrese el dinero que quiere ingresar");
+    consignar($cantidad);
 }
+if ($accion == 2){
+    consultar();
+}
+if ($accion == 3){
+    retirar($cantidad);
+}
+echo $accion;
+
 ?>
